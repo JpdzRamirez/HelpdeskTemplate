@@ -52,7 +52,7 @@ class __TwigTemplate_b24a02f6e281819faef32d6c4b9c079c extends Template
    <title>";
         // line 38
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["title"] ?? null), "html", null, true);
-        yield " - GLPI</title>
+        yield " - Softlogy</title>
 
    <meta charset=\"utf-8\" />
 
@@ -118,50 +118,51 @@ class __TwigTemplate_b24a02f6e281819faef32d6c4b9c079c extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 61
         yield "
+
    ";
-        // line 62
+        // line 63
         yield $this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->customCss();
         yield "
 
    <link rel=\"shortcut icon\" type=\"images/x-icon\" href=\"";
-        // line 64
+        // line 65
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->assetPath("/pics/favicon.ico"), "html", null, true);
         yield "\" />
 
    ";
-        // line 66
+        // line 67
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["js_files"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["js_file"]) {
-            // line 67
+            // line 68
             yield "      <script type=\"text/javascript\" src=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->jsPath(CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "path", [], "any", false, false, false, 67), (((CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", true, true, false, 67) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 67)))) ? (CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 67)) : ([]))), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->jsPath(CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "path", [], "any", false, false, false, 68), (((CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", true, true, false, 68) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 68)))) ? (CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 68)) : ([]))), "html", null, true);
             yield "\"></script>
    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['js_file'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 70
         yield "
    ";
-        // line 70
+        // line 71
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["js_modules"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["js_file"]) {
-            // line 71
+            // line 72
             yield "      <script type=\"module\" src=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->jsPath(CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "path", [], "any", false, false, false, 71), (((CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", true, true, false, 71) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 71)))) ? (CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 71)) : ([]))), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->jsPath(CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "path", [], "any", false, false, false, 72), (((CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", true, true, false, 72) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 72)))) ? (CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 72)) : ([]))), "html", null, true);
             yield "\"></script>
    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['js_file'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 73
+        // line 74
         yield "
    ";
-        // line 74
+        // line 75
         yield $this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->localesJs();
         yield "
 </head>
@@ -190,7 +191,7 @@ class __TwigTemplate_b24a02f6e281819faef32d6c4b9c079c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  165 => 74,  162 => 73,  153 => 71,  149 => 70,  146 => 69,  137 => 67,  133 => 66,  128 => 64,  123 => 62,  120 => 61,  111 => 59,  107 => 58,  102 => 56,  99 => 55,  78 => 53,  73 => 52,  69 => 49,  65 => 46,  61 => 43,  54 => 38,  48 => 36,  42 => 35,  38 => 33,);
+        return array (  166 => 75,  163 => 74,  154 => 72,  150 => 71,  147 => 70,  138 => 68,  134 => 67,  129 => 65,  124 => 63,  120 => 61,  111 => 59,  107 => 58,  102 => 56,  99 => 55,  78 => 53,  73 => 52,  69 => 49,  65 => 46,  61 => 43,  54 => 38,  48 => 36,  42 => 35,  38 => 33,);
     }
 
     public function getSourceContext()

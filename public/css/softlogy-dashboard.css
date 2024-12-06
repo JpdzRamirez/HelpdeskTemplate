@@ -1,0 +1,109 @@
+.page .glpi-logo {
+    background-size: contain !important;
+    background-color: whitesmoke !important;
+    border-radius: 1em;
+    background-position-y: center !important;
+}
+
+.spinner-background{
+
+    height: 100vh;
+    position: fixed;
+    z-index: 30;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+.spinner{
+    width: 89px;
+    height: 89px;
+    position: absolute;
+    z-index: 20;
+    background: #0a66c2;
+    animation-duration: 2.5s;
+    animation-name: animSpin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+     
+
+  
+  .spinner,
+  .spinner:before,
+  .spinner:after{
+    border-radius: 50%;
+  }
+  
+  .spinner:before,
+  .spinner:after{
+    content: '';
+    position: absolute;
+    border: 8px solid transparent;
+  }
+  
+  .spinner:before{
+    width: 75%;
+    height: 75%;
+    background: rgba(255,255,255,.13);
+    left: 12.5%;
+    top: 12.5%;
+    border-left: 8px solid rgba(255,255,255,.34);
+    border-bottom: 8px solid rgba(255,255,255,.34);
+  }
+  
+  .spinner:after{
+    width: 40%;
+    height: 40%;
+    left: 30%;
+    top: 30%;
+    border-right: 8px solid rgba(255,255,255,1);
+    border-left: 8px solid rgba(255,255,255,1);
+    border-bottom: 8px solid rgba(255,255,255,1);
+  }
+/* ----------------------------------------------
+            Animation clases
+* ---------------------------------------------- */
+
+  .fade-out {
+    -webkit-animation: fade-out 1s ease-out both;
+            animation: fade-out 1s ease-out both;
+}
+/**
+* ----------------------------------------
+* animation spin
+* ----------------------------------------
+*/
+@keyframes animSpin{
+    50%{
+      transform: rotateZ(180deg) scale(.94);
+    }
+    100%{
+      transform: rotateZ(360deg) scale(1);
+    }
+  }
+/**
+* ----------------------------------------
+* animation fade-out
+* ----------------------------------------
+*/
+@-webkit-keyframes fade-out {
+0% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+}
+@keyframes fade-out {
+0% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+}

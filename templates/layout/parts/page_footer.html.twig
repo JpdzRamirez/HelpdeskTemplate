@@ -53,7 +53,26 @@
    {% for js_file in js_files %}
       <script type="text/javascript" src="{{ js_path(js_file.path, js_file.options ?? []) }}"></script>
    {% endfor %}
-
+      <script>
+             /**
+     * Preloader
+     */
+     const preloader = document.querySelector("#preloader");
+     
+     if (preloader) {
+         window.addEventListener("load", () => {
+             // Añadir clase de fade-out
+             setTimeout(() => {
+               preloader.classList.add("fade-out");
+             }, 1000);
+             
+             // Esperar a que termine la animación antes de eliminarlo
+             setTimeout(() => {
+                 preloader.remove();
+               }, 1500);
+         });
+     }
+      </script>
    {% for js_file in js_modules %}
       <script type="module" src="{{ js_path(js_file.path, js_file.options ?? []) }}"></script>
    {% endfor %}

@@ -35,7 +35,7 @@
 <html lang="{{ lang }}" {% if high_contrast %}data-high-contrast="1"{% endif %}
       {{ glpi_request_id is defined ? 'data-glpi-request-id=' ~ glpi_request_id : '' }}>
 <head>
-   <title>{{ title }} - GLPI</title>
+   <title>{{ title }} - Softlogy</title>
 
    <meta charset="utf-8" />
 
@@ -58,6 +58,7 @@
    {% for css_file in css_files %}
       <link rel="stylesheet" type="text/css" href="{{ css_path(css_file.path, css_file.options ?? []) }}" />
    {% endfor %}
+
 
    {{ custom_css() }}
 

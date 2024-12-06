@@ -88,22 +88,41 @@ class __TwigTemplate_0728fe6c57dc06ba83a5a49672fe4dfe extends Template
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['js_file'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 56
-        yield "
+        yield "      <script>
+             /**
+     * Preloader
+     */
+     const preloader = document.querySelector(\"#preloader\");
+     
+     if (preloader) {
+         window.addEventListener(\"load\", () => {
+             // Añadir clase de fade-out
+             setTimeout(() => {
+               preloader.classList.add(\"fade-out\");
+             }, 1000);
+             
+             // Esperar a que termine la animación antes de eliminarlo
+             setTimeout(() => {
+                 preloader.remove();
+               }, 1500);
+         });
+     }
+      </script>
    ";
-        // line 57
+        // line 76
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["js_modules"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["js_file"]) {
-            // line 58
+            // line 77
             yield "      <script type=\"module\" src=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->jsPath(CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "path", [], "any", false, false, false, 58), (((CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", true, true, false, 58) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 58)))) ? (CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 58)) : ([]))), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Glpi\Application\View\Extension\FrontEndAssetsExtension']->jsPath(CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "path", [], "any", false, false, false, 77), (((CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", true, true, false, 77) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 77)))) ? (CoreExtension::getAttribute($this->env, $this->source, $context["js_file"], "options", [], "any", false, false, false, 77)) : ([]))), "html", null, true);
             yield "\"></script>
    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['js_file'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
+        // line 79
         yield "
 </body>
 </html>
@@ -132,7 +151,7 @@ class __TwigTemplate_0728fe6c57dc06ba83a5a49672fe4dfe extends Template
      */
     public function getDebugInfo()
     {
-        return array (  107 => 60,  98 => 58,  94 => 57,  91 => 56,  82 => 54,  78 => 53,  75 => 52,  69 => 49,  66 => 48,  64 => 47,  56 => 42,  52 => 41,  47 => 38,  45 => 37,  43 => 36,  41 => 35,  38 => 33,);
+        return array (  126 => 79,  117 => 77,  113 => 76,  91 => 56,  82 => 54,  78 => 53,  75 => 52,  69 => 49,  66 => 48,  64 => 47,  56 => 42,  52 => 41,  47 => 38,  45 => 37,  43 => 36,  41 => 35,  38 => 33,);
     }
 
     public function getSourceContext()

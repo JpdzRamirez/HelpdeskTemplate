@@ -46,106 +46,100 @@ class __TwigTemplate_93a99b0d96269d0a506bd36f119d456b extends Template
         if ( !array_key_exists("css_files", $context)) {
             // line 36
             yield "   ";
-            $context["css_files"] = [["path" => "public/lib/base.css"],["path" => "public/css/softlogy.css"], ["path" => (("css/palettes/" .             // line 38
+            $context["css_files"] = [["path" => "public/lib/base.css"], ["path" => "public/css/softlogy-login.css"], ["path" => (("css/palettes/" .             // line 39
 ($context["theme"] ?? null)) . ".scss")]];
-            // line 40
+            // line 41
             yield "   ";
         }
-        // line 42
+        // line 43
         if ( !array_key_exists("js_files", $context)) {
-            // line 43
+            // line 44
             yield "   ";
             $context["js_files"] = [["path" => "public/lib/base.js"], ["path" => "public/js/softlogy.js"], ["path" => "js/common.js"], ["path" => "public/lib/fuzzy.js"]];
         }
-        // line 49
+        // line 51
         yield "
 ";
-        // line 50
+        // line 52
         yield Twig\Extension\CoreExtension::include($this->env, $context, "layout/parts/head-login.html.twig");
         yield "
-<body class=\"welcome-anonymous\">
-   <div class=\"page-anonymous\">
-      <div class=\"flex-fill d-flex flex-column justify-content-center py-4 mt-4\">
+<body class=\"container\">
+   <div class=\"spinner-background\" id=\"preloader\">
+      <div class=\"spinner\"></div>
+   </div>
+
+   <div class=\"d-flex justify-content-center h-100\">
+      <div class=\"card\">
          ";
-        // line 54
+        // line 60
         $context["style"] = null;
-        // line 55
+        // line 61
         yield "         ";
         if (array_key_exists("card_md_width", $context)) {
-            // line 56
+            // line 62
             yield "            ";
             $context["style"] = "max-width: 40rem";
-            // line 57
+            // line 63
             yield "         ";
         }
-        // line 58
+        // line 64
         yield "         ";
         if (array_key_exists("card_bg_width", $context)) {
-            // line 59
+            // line 65
             yield "            ";
             $context["style"] = "max-width: 60rem";
-            // line 60
+            // line 66
             yield "         ";
         }
-        // line 61
-        yield "
-         <div class=\"container-tight py-6\" ";
-        // line 62
-        if ( !(null === ($context["style"] ?? null))) {
-            yield "style=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["style"] ?? null), "html", null, true);
-            yield "\"";
-        }
-        yield ">
-            <div class=\"text-center\">
-               <div class=\"col-md\">
-                  <span class=\"glpi-logo mb-4\" title=\"GLPI\"></span>
-               </div>
-            </div>
-            <div class=\"card card-md\">
-               <div class=\"card-body\">
-               ";
-        // line 70
-        yield from $this->unwrap()->yieldBlock('content_block', $context, $blocks);
-        // line 71
-        yield "               </div>
-            </div>
-
-            <div class=\"text-center text-muted mt-3\">
-               ";
-        // line 75
-        yield from $this->unwrap()->yieldBlock('footer_block', $context, $blocks);
+        // line 67
+        yield "         <div class=\"card-header\">
+\t\t\t\t<h2 style=\"color:white;\">Mesa de Ayuda</h2>
+\t\t\t\t<div class=\"d-flex justify-content-end social_icon\">
+               <div class=\"brand_logo_container\">
+\t\t\t\t\t\t<img src=\"https://media.licdn.com/dms/image/v2/D4E0BAQHv0sOdw1_-Rg/company-logo_200_200/company-logo_200_200/0/1702927309224?e=1741824000&v=beta&t=n9iH1vKIRxtI97mEc0V3a0cx0wTTv8a10591nKGJdO0\" class=\"brand_logo\" alt=\"Logo\">
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+         <div class=\"card-body\">
+            ";
         // line 76
-        yield "            </div>
-         </div>
+        yield from $this->unwrap()->yieldBlock('content_block', $context, $blocks);
+        // line 77
+        yield "\t\t\t</div>
+         <div class=\"card-footer\">
+            ";
+        // line 79
+        yield from $this->unwrap()->yieldBlock('footer_block', $context, $blocks);
+        // line 80
+        yield "\t\t\t</div>
       </div>
    </div>
 
    ";
-        // line 81
+        // line 84
         yield from $this->unwrap()->yieldBlock('javascript_block', $context, $blocks);
-        // line 82
+        // line 85
         yield "</body>
 </html>
 ";
         return; yield '';
     }
 
-    // line 70
+    // line 76
     public function block_content_block($context, array $blocks = [])
     {
         $macros = $this->macros;
         return; yield '';
     }
 
-    // line 75
+    // line 79
     public function block_footer_block($context, array $blocks = [])
     {
         $macros = $this->macros;
         return; yield '';
     }
 
-    // line 81
+    // line 84
     public function block_javascript_block($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -173,7 +167,7 @@ class __TwigTemplate_93a99b0d96269d0a506bd36f119d456b extends Template
      */
     public function getDebugInfo()
     {
-        return array (  149 => 81,  142 => 75,  135 => 70,  128 => 82,  126 => 81,  119 => 76,  117 => 75,  111 => 71,  109 => 70,  94 => 62,  91 => 61,  88 => 60,  85 => 59,  82 => 58,  79 => 57,  76 => 56,  73 => 55,  71 => 54,  64 => 50,  61 => 49,  57 => 43,  55 => 42,  52 => 40,  50 => 38,  48 => 36,  46 => 35,  44 => 34,  41 => 33,);
+        return array (  143 => 84,  136 => 79,  129 => 76,  122 => 85,  120 => 84,  114 => 80,  112 => 79,  108 => 77,  106 => 76,  95 => 67,  92 => 66,  89 => 65,  86 => 64,  83 => 63,  80 => 62,  77 => 61,  75 => 60,  64 => 52,  61 => 51,  57 => 44,  55 => 43,  52 => 41,  50 => 39,  48 => 36,  46 => 35,  44 => 34,  41 => 33,);
     }
 
     public function getSourceContext()

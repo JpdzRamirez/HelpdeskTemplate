@@ -10965,7 +10965,7 @@ msgstr "Versão da base de dados GLPI"
 
 #: src/Auth.php:1275 src/Auth.php:1835
 msgid "GLPI internal database"
-msgstr "Base de dados interna GLPI"
+msgstr "Base de dados interna SoftLogic"
 
 #: src/Marketplace/View.php:1070
 msgid "GLPI provides a new marketplace to download and install plugins."

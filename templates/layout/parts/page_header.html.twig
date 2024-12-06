@@ -44,6 +44,9 @@
    {{ include('layout/parts/impersonate_banner.html.twig') }}
    {{ include('components/messages_after_redirect_toasts.html.twig', {'display_container': true}) }}
 
+   <div class="spinner-background" id="preloader">
+      <div class="spinner"></div>
+   </div>
    <div class="page">
 
       {% if is_vertical %}

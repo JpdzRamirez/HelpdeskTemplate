@@ -4423,7 +4423,7 @@ msgstr "Autenticación"
 
 #: src/Auth.php:1148
 msgid "Authentication on GLPI database"
-msgstr "Autenticación en la base de datos de GLPI"
+msgstr "Autenticación en la base de datos de SoftLogic"
 
 #: src/Auth.php:1161
 msgid "Authentication on a LDAP directory"
@@ -10975,11 +10975,11 @@ msgstr ""
 
 #: src/Console/Database/UpdateCommand.php:170
 msgid "GLPI database version"
-msgstr "Versión base de datos GLPI"
+msgstr "Versión base de datos SoftLogic"
 
 #: src/Auth.php:1275 src/Auth.php:1835
 msgid "GLPI internal database"
-msgstr "Base interna GLPI"
+msgstr "Base interna SoftLogic"
 
 #: src/Marketplace/View.php:1070
 msgid "GLPI provides a new marketplace to download and install plugins."

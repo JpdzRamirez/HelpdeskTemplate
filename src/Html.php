@@ -1132,9 +1132,9 @@ HTML;
             'css_files' => [],
             'js_files'  => [],
         ];
-
+        
         $tpl_vars['css_files'][] = ['path' => 'public/lib/base.css'];
-        $tpl_vars['css_files'][] = ['path' => 'public/css/softlogy.css'];
+        $tpl_vars['css_files'][] = ['path' => 'public/css/softlogy-dashboard.css'];
 
         if (isset($CFG_GLPI['notifications_ajax']) && $CFG_GLPI['notifications_ajax']) {
             Html::requireJs('notifications_ajax');
@@ -1321,6 +1321,7 @@ HTML;
 
 
         $tpl_vars['js_files'][] = ['path' => 'public/lib/base.js'];
+        $tpl_vars['js_files'][] = ['path' => 'public/js/softlogy.js'];
         $tpl_vars['js_files'][] = ['path' => 'js/webkit_fix.js'];
         $tpl_vars['js_files'][] = ['path' => 'js/common.js'];
 

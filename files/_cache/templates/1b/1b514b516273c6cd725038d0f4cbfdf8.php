@@ -52,7 +52,7 @@ class __TwigTemplate_3ed5f267268e48573ed1d7268c77f842 extends Template
    <title>";
         // line 38
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["title"] ?? null), "html", null, true);
-        yield " - GLPI</title>
+        yield " - Softlogy</title>
 
    <meta charset=\"utf-8\" />
 
