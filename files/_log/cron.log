@@ -180,3 +180,7 @@ Interno #1: Lanzar queuednotification
 Interno #1: Lanzar mailgate
 2024-12-06 03:32:44 [@DESKTOP-FR9QELT]
 Interno #1: Lanzar slaticket
+2024-12-05 22:47:35 [@DESKTOP-FR9QELT]
+Interno #1: Lanzar planningrecall
+2024-12-05 22:47:35 [@DESKTOP-FR9QELT]
+Interno #1: Error during planningrecall execution. Check in "C:\laragon\www\softlogy/files/_log/php-errors.log" for more details.

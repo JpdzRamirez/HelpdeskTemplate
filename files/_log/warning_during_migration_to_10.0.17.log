@@ -1,0 +1,3 @@
+2024-12-05 22:47:10 [@DESKTOP-FR9QELT]
+The database schema is not consistent with the current GLPI version.
+It is recommended to run the "php bin/console database:check_schema_integrity" command to see the differences.
