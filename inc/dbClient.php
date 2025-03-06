@@ -1,13 +1,21 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php'; // Asegúrate de que apunta al autoload de Composer
+include_once(GLPI_ROOT . "/inc/config.php");
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../'); // Ajusta la ruta si es necesario
-$dotenv->load();
-function getUserPDO($user_id) {
-    $host = 'localhost';
-    $dbname = 'softlogy';
-    $username = 'root';
-    $password = 'Adm1nPC44$';
+// Cargar variables de entorno desde la raíz del proyecto
+loadEnv(dirname(__DIR__) . '/.env');
+
+
+// Función para conectarse a la base de datos usando las variables de entorno
+function getUserPDO($user_id)
+{
+    $host = getenv('DB_HOST');
+    $dbname = getenv('DB_NAME');
+    $username = getenv('DB_USER');
+    $password = getenv('DB_PASS');
+
+    if (!$host || !$dbname || !$username || !$password) {
+        die("Error: No se pudieron cargar las credenciales de la base de datos.");
+    }
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);

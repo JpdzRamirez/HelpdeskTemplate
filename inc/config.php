@@ -281,3 +281,32 @@ if ($missing_db_config) {
 if (!isset($CFG_GLPI['root_doc'])) {
     Config::detectRootDoc();
 }
+
+function loadEnv($file)
+{
+    if (!file_exists($file)) {
+        die("Error: El archivo .env no existe.");
+    }
+
+    $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        // Ignorar líneas en blanco y comentarios
+        if (strpos(trim($line), '#') === 0 || empty(trim($line))) {
+            continue;
+        }
+
+        // Separar clave=valor, asegurando que haya dos partes
+        $parts = explode('=', $line, 2);
+        if (count($parts) !== 2) {
+            die("Error en .env: línea inválida -> $line");
+        }
+
+        $key = trim($parts[0]);
+        $value = trim($parts[1], " \t\n\r\0\x0B\"'"); // Eliminar espacios y comillas
+
+        // Guardar en entorno
+        putenv("$key=$value");
+        $_ENV[$key] = $value;
+        $_SERVER[$key] = $value;
+    }
+}
