@@ -48,17 +48,30 @@
             <span class="mt-2 timeline-content left card">
                <div class="card-body">
                   {% if item.isNewItem() %}
-                     <div class="alert alert-info" role="alert">
+                     <div class="alert alert-info" role="alert"> 
                         {% set entitybadge %}
                            <span class="ms-1">
+                              
                               {{ call('Entity::badgeCompletenameById', [item.fields['entities_id']])|raw }}
                            </span>
                         {% endset %}
+                        {% if item.getTypeName(1) =='Problema' %}
+                           {{ __('%1$s will be added in entity %2$s')|format(
+                              'La tarea de Desarrollo',
+                              entitybadge
+                           )|raw }}
+                           {% elseif item.getTypeName(1) =='Cambio' %}
+                              {{ __('%1$s will be added in entity %2$s')|format(
+                                 'La tarea Administrativa',
+                                 entitybadge
+                              )|raw }}
+                           {% else %}
+                              {{ __('%1$s will be added in entity %2$s')|format(
+                                 item.getTypeName(1),
+                                 entitybadge
+                              )|raw }}
+                        {% endif %}                                      
 
-                        {{ __('%1$s will be added in entity %2$s')|format(
-                           item.getTypeName(1),
-                           entitybadge
-                        )|raw }}
                      </div>
                   {% endif %}
 

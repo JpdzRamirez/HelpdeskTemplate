@@ -194,7 +194,13 @@ class Itil_Project extends CommonDBRelation
                          $label = __('Add a ticket');
                         break;
                 }
-                echo '<tr class="tab_bg_2"><th colspan="2">' . $label . '</th></tr>';
+                if(strpos($label, 'problema') !== false){
+                    echo '<tr class="tab_bg_2"><th colspan="2">' . 'Agregar Desarrollo👇' . '</th></tr>';
+                } else if(strpos($label, 'cambio') !== false){
+                    echo '<tr class="tab_bg_2"><th colspan="2">' . 'Agregar Tarea Administrativa👇' . '</th></tr>';
+                } else {
+                    echo '<tr class="tab_bg_2"><th colspan="2">' . $label . '</th></tr>';
+                }                
                 echo '<tr class="tab_bg_2">';
                 echo '<td>';
                 echo '<input type="hidden" name="projects_id" value="' . $ID . '" />';
@@ -230,7 +236,14 @@ class Itil_Project extends CommonDBRelation
 
             echo '<table class="tab_cadre_fixehov">';
             echo '<tr class="noHover">';
-            echo '<th colspan="12">' . $itemtype::getTypeName($numrows) . '</th>';
+            if($itemtype::getTypeName($numrows)=='Cambios'){
+                echo '<th colspan="12">' . 'Tareas Administrativas'. '</th>';
+            } else if($itemtype::getTypeName($numrows)=='Problemas' || $itemtype::getTypeName($numrows)=='Problema'){
+                echo '<th colspan="12">' . 'Desarrollos'. '</th>';
+            }
+            else {
+                echo '<th colspan="12">' . $itemtype::getTypeName($numrows) . '</th>';
+            }            
             echo '</tr>';
             if ($numrows) {
                 $itemtype::commonListHeader(Search::HTML_OUTPUT, $massContainerId);
@@ -256,8 +269,8 @@ class Itil_Project extends CommonDBRelation
                 }
                 $itemtype::commonListHeader(Search::HTML_OUTPUT, $massContainerId);
             }
-            echo '</table>';
-
+            echo '</table>';            
+            echo '<hr>';
             if ($canedit && $numrows) {
                 $massiveactionparams['ontop'] = false;
                 Html::showMassiveActions($massiveactionparams);

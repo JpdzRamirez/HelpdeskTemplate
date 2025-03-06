@@ -35,7 +35,13 @@
 <html lang="{{ lang }}" {% if high_contrast %}data-high-contrast="1"{% endif %}
       {{ glpi_request_id is defined ? 'data-glpi-request-id=' ~ glpi_request_id : '' }}>
 <head>
-   <title>{{ title }} - Softlogy</title>
+   {% if 'Problema' in title %}
+      <title>Desarrollo - Softlogy</title>   
+      {% elseif 'Cambios' in title %}
+      <title>Administrativo - Softlogy</title>  
+      {% else %}
+      <title>{{ title }} - Softlogy</title>
+   {% endif  %}   
 
    <meta charset="utf-8" />
 
@@ -71,6 +77,12 @@
    {% for js_file in js_modules %}
       <script type="module" src="{{ js_path(js_file.path, js_file.options ?? []) }}"></script>
    {% endfor %}
-
+   {# <link rel="stylesheet" href="/public/vendors/typicons/typicons.css">
+   <link rel="stylesheet" href="/public/vendors/css/vendor.bundle.base.css">
+   <!-- endinject -->
+   <!-- plugin css for this page -->
+   <!-- End plugin css for this page -->
+   <!-- inject:css -->
+   <link rel="stylesheet" href="/public/css/vertical-layout-light/dashboardStyle.css"> #}
    {{ locales_js() }}
 </head>
