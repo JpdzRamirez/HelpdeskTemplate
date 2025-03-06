@@ -2,7 +2,7 @@
 class DB extends DBmysql {
    public $dbhost = 'localhost';
    public $dbuser = 'root';
-   public $dbpassword = 'Adm1nPC44%24';
+   public $dbpassword = 'Adm1nPC44$';
    public $dbdefault = 'softlogy';
    public $use_timezones = true;
    public $use_utf8mb4 = true;
