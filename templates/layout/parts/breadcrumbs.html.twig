@@ -52,13 +52,28 @@
    {% if menu[sector]['content'][item] is defined %}
       {% if menu[sector]['content'][item]['page'] is defined %}
       {% set with_option = option is not empty and menu[sector]['content'][item]['options'][option]['title'] is defined and menu[sector]['content'][item]['options'][option]['page'] is defined %}
-      <li class="breadcrumb-item text-truncate">
-         <a href="{{ path(menu[sector]['content'][item]['page']) }}"
+      <li class="breadcrumb-item text-truncate">         
+         {% if menu[sector]['content'][item]['title'] =='Problemas' %}
+            <a href="{{ path(menu[sector]['content'][item]['page']) }}"
+            class="{{ with_option ? '' : 'here' }}"
+            title="Desarrollos" >
+            <i class="fa-solid fa-microchip"></i> Desarrollos
+            </a>    
+            {% elseif menu[sector]['content'][item]['title'] =='Cambios' %}  
+            <a href="{{ path(menu[sector]['content'][item]['page']) }}"
+            class="{{ with_option ? '' : 'here' }}"
+            title="Cambios" >
+            <i class="fa-solid fa-user-tie"></i> Administrativo
+            </a>    
+            {% else%}
+            <a href="{{ path(menu[sector]['content'][item]['page']) }}"
             class="{{ with_option ? '' : 'here' }}"
             title="{{ menu[sector]['content'][item]['title'] }}" >
             <i class="{{ menu[sector]['content'][item]['icon'] ?? '' }}"></i>
-            {{ menu[sector]['content'][item]['title'] }}
-         </a>
+            {{ menu[sector]['content'][item]['title'] }} 
+         </a>  
+         {% endif %}                     
+
       </li>
       {% endif %}
 

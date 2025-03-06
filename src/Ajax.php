@@ -336,11 +336,24 @@ JAVASCRIPT;
 
             foreach ($tabs as $val) {
                 $target = str_replace('\\', '_', $val['id']);
-                $html_tabs .= "<li class='nav-item $navitemml'>
-               <a class='nav-link justify-content-between $navlinkp $display_class' data-bs-toggle='tab' title='" . strip_tags($val['title']) . "' ";
-                $html_tabs .= " href='" . $val['url'] . (isset($val['params']) ? '?' . $val['params'] : '') . "' data-bs-target='#{$target}'>";
-                $html_tabs .= $val['title'] . "</a></li>";
 
+                if(strpos($val['title'], 'Problema') !== false){
+                    if (preg_match('/^Problema(?=\s*<span\b[^>]*>.*?<\/span>)/', $val['title'])) {                       
+                        $val['title'] = preg_replace('/^Problema(?=\s*<span\b[^>]*>.*?<\/span>)/', 'Desarrollo', $val['title']);
+                    } else {                        
+                        $val['title'] = 'Desarrollo';
+                    }
+                }else if(strpos($val['title'], 'Cambio') !== false){                    
+                    if (preg_match('/^Cambio(?=\s*<span\b[^>]*>.*?<\/span>)/', $val['title'])) {                       
+                        $val['title'] = preg_replace('/^Cambio(?=\s*<span\b[^>]*>.*?<\/span>)/', 'Tarea Administrativa', $val['title']);
+                    } else {                        
+                        $val['title'] = 'Tarea Administrativa';
+                    }
+                }
+                $html_tabs .= "<li class='nav-item $navitemml'>
+                    <a class='nav-link justify-content-between $navlinkp $display_class' data-bs-toggle='tab' title='" . strip_tags($val['title']) . "' ";
+                    $html_tabs .= " href='" . $val['url'] . (isset($val['params']) ? '?' . $val['params'] : '') . "' data-bs-target='#{$target}'>";
+                    $html_tabs .= $val['title'] . "</a></li>";
                 $html_sele .= "<option value='$i' " . ($active_id == $target ? "selected" : "") . ">
                {$val['title']}
             </option>";

@@ -52,7 +52,13 @@
                 {{ item.getStatusIcon(item.fields['status'])|raw }}
             </span>
             <span class="item-title">
-                {{ item.getTypeName(1) }}
+               {% if item.getTypeName(1) =='Problema' %}                  
+                     Tarea de Desarrollo
+                  {% elseif  item.getTypeName(1) =='Cambio'%}   
+                     Tarea Administrativa
+                  {% else %}
+                     {{ item.getTypeName(1) }}
+               {% endif %}                     
             </span>
          </button>
       </h2>
