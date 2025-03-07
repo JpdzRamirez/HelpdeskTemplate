@@ -77,7 +77,7 @@
       <script type="module" src="{{ js_path(js_file.path, js_file.options ?? []) }}"></script>
    {% endfor %}   
   <!-- Plugin js for this page-->
-  {# <script src="/public/vendors/chart.js/Chart.min.js"></script>
+  <script src="/public/vendors/chart.js/Chart.min.js"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="/public/js/dashboardJs/off-canvas.js"></script>
@@ -86,9 +86,7 @@
   <script src="/public/js/dashboardJs/settings.js"></script>
   <script src="/public/js/dashboardJs/todolist.js"></script>
   <!-- endinject -->
-  
-  <!-- Custom js for this page-->
-  <script src="/public/js/dashboardJs/dashboard.js"></script>
+      
   <!-- End custom js for this page--> #}
 </body>
 </html>
